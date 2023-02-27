@@ -1,18 +1,14 @@
 import java.util.Arrays;
 import java.util.SortedMap;
 
-public class Gryffindor extends Hogwarts{
+public class Gryffindor extends Hogwarts<Gryffindor>{
     public Gryffindor(String studentName, int spellPower, int transgressionDist, int nobility, int honor, int courage) {
         super(studentName, Faculties.GRYFFINDOR, spellPower, transgressionDist);
         this.setSkillSet(new int[]{nobility, honor, courage});
     }
 
     @Override
-    public void compareTo(Hogwarts opponent) {
-        if (opponent.getFaculty()!=Faculties.GRYFFINDOR){
-            System.out.println("Please compare students within the same faculty");
-            return;
-        }
+    public void compareTo(Gryffindor opponent) {
         int thisTotal = totalPower();
         int opponentTotal = opponent.totalPower();
         if (thisTotal == opponentTotal) System.out.println(getStudentName() + " такой же Гриффиндорец, как и " + opponent.getStudentName());

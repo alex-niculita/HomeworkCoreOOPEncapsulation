@@ -1,17 +1,13 @@
 import java.util.Arrays;
 
-public class Ravenclaw extends Hogwarts{
+public class Ravenclaw extends Hogwarts<Ravenclaw>{
     public Ravenclaw(String studentName, int spellPower, int transgressionDist, int intelligence, int wisdom, int wit, int creativity) {
         super(studentName, Faculties.RAVENCLAW,spellPower, transgressionDist);
         this.setSkillSet(new int[]{intelligence, wisdom, wit, creativity});
     }
 
     @Override
-    public void compareTo(Hogwarts opponent) {
-        if (opponent.getFaculty()!=Faculties.RAVENCLAW){
-            System.out.println("Please compare students within the same faculty");
-            return;
-        }
+    public void compareTo(Ravenclaw opponent) {
         int thisTotal = totalPower();
         int opponentTotal = opponent.totalPower();
         if (thisTotal == opponentTotal) System.out.println(getStudentName() + " такой же Когтевранец, как и " + opponent.getStudentName());

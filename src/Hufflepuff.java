@@ -1,17 +1,13 @@
 import java.util.Arrays;
 
-public class Hufflepuff extends Hogwarts{
+public class Hufflepuff extends Hogwarts<Hufflepuff>{
     public Hufflepuff(String studentName, int spellPower, int transgressionDist, int diligence, int loyalty, int honesty) {
         super(studentName, Faculties.HUFFLEPUFF, spellPower, transgressionDist);
         this.setSkillSet(new int[]{diligence, loyalty, honesty});
     }
 
     @Override
-    public void compareTo(Hogwarts opponent) {
-        if (opponent.getFaculty()!=Faculties.HUFFLEPUFF){
-            System.out.println("Please compare students within the same faculty");
-            return;
-        }
+    public void compareTo(Hufflepuff opponent) {
         int thisTotal = totalPower();
         int opponentTotal = opponent.totalPower();
         if (thisTotal == opponentTotal) System.out.println(getStudentName() + " такой же Пуффендуйец, как и " + opponent.getStudentName());

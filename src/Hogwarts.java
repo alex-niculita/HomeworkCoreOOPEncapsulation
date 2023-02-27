@@ -1,4 +1,4 @@
-public abstract class Hogwarts {
+public abstract class Hogwarts<T> {
 
     // == Fields ==
     private final String studentName;
@@ -21,7 +21,7 @@ public abstract class Hogwarts {
     }
 
     // == Public Methods ==
-    abstract public void compareTo(Hogwarts student); // Сравнение двух учеников одного факультета по свойствам только это факультета
+    abstract public void compareTo(T student); // Сравнение двух учеников одного факультета по свойствам только это факультета
     abstract protected int totalPower(); // Сумма баллов по всем качествам для студента, присущих определенному факультету
 
     public static void compareTo(Hogwarts student1, Hogwarts student2){ // Сравнение двух любых учеников по присущим всем ученикам школы характеристикам
